@@ -1,0 +1,23 @@
+{
+  "appTitle": "Lista de Tareas",
+  "todoList": "Lista de Tareas",
+  "addTodo": "Añadir Tarea",
+  "editTodo": "Editar Tarea",
+  "todoDetails": "Detalles de la Tarea",
+  "title": "Título",
+  "description": "Descripción",
+  "completed": "Completada",
+  "save": "Guardar",
+  "delete": "Eliminar",
+  "cancel": "Cancelar",
+  "noTodos": "No hay tareas todavía. ¡Añade una!",
+  "offline": "Estás desconectado",
+  "online": "Estás conectado",
+  "requiredField": "Este campo es obligatorio",
+  "todoAdded": "Tarea añadida con éxito",
+  "todoUpdated": "Tarea actualizada con éxito",
+  "todoDeleted": "Tarea eliminada con éxito",
+  "confirmDelete": "¿Estás seguro de que quieres eliminar esta tarea?",
+  "yes": "Sí",
+  "no": "No"
+}
