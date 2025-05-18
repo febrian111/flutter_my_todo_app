@@ -1,10 +1,8 @@
+import 'package:my_todo_app/core/di/providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/entities/task.dart';
-import '../../domain/usecases/add_task.dart';
-import '../../domain/usecases/delete_task.dart';
 import '../../domain/usecases/get_tasks.dart';
-import '../../domain/usecases/update_task.dart';
 
 part 'task_viewmodel.g.dart';
 
@@ -27,8 +25,14 @@ class TaskViewModel extends _$TaskViewModel {
   }
 
   Future<void> addTask(Task task) async {
-    await ref.read(addTaskProvider.notifier).execute(task);
-    // _loadTasks();
+    try {
+      state = const AsyncValue.loading();
+
+      await ref.read(addTaskProvider).execute(task);
+      await _loadTasks();
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+    }
   }
 
   Future<void> updateTask(Task task) async {

@@ -14,7 +14,7 @@ class TodoApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Todo App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade700),
         useMaterial3: true,
       ),
       routerConfig: router,

@@ -1,21 +1,13 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-
 import '../repositories/task_repository.dart';
-import '../../core/di/providers.dart';
-import 'get_tasks.dart';
 
-part 'delete_task.g.dart';
+class DeleteTask {
+  DeleteTask(this._taskRepository);
 
-@riverpod
-class DeleteTask extends _$DeleteTask {
-  @override
-  Future<void> build() async {}
+  final TaskRepository _taskRepository;
 
   Future<void> execute(String id) async {
-    state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async {
-      await ref.read(taskRepositoryProvider).deleteTask(id);
-      await ref.read(getTasksProvider.notifier).execute();
-    });
+    // Simulate a delay for demonstration purposes
+    await Future.delayed(Duration(seconds: 5));
+    await _taskRepository.deleteTask(id);
   }
 }

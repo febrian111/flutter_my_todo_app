@@ -115,5 +115,53 @@ final taskRepositoryProvider = AutoDisposeProvider<TaskRepository>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef TaskRepositoryRef = AutoDisposeProviderRef<TaskRepository>;
+String _$addTaskHash() => r'ce7be6a7d6f2e8ff522c15459e5b590277cfd40f';
+
+/// See also [addTask].
+@ProviderFor(addTask)
+final addTaskProvider = AutoDisposeProvider<AddTask>.internal(
+  addTask,
+  name: r'addTaskProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$addTaskHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AddTaskRef = AutoDisposeProviderRef<AddTask>;
+String _$deleteTaskHash() => r'24fc9023852544919f92c07fc178a7b73283b9ef';
+
+/// See also [deleteTask].
+@ProviderFor(deleteTask)
+final deleteTaskProvider = AutoDisposeProvider<DeleteTask>.internal(
+  deleteTask,
+  name: r'deleteTaskProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$deleteTaskHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef DeleteTaskRef = AutoDisposeProviderRef<DeleteTask>;
+String _$updateTaskHash() => r'b3a70db759946aa0efd50ff85756c2db8f066f1d';
+
+/// See also [updateTask].
+@ProviderFor(updateTask)
+final updateTaskProvider = AutoDisposeProvider<UpdateTask>.internal(
+  updateTask,
+  name: r'updateTaskProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$updateTaskHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef UpdateTaskRef = AutoDisposeProviderRef<UpdateTask>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

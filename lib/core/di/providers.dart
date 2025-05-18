@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_todo_app/data/datasources/task_datasource.dart';
+import 'package:my_todo_app/domain/usecases/add_task.dart';
+import 'package:my_todo_app/domain/usecases/delete_task.dart';
+import 'package:my_todo_app/domain/usecases/get_tasks.dart';
+import 'package:my_todo_app/domain/usecases/update_task.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,4 +49,19 @@ TaskRepository taskRepository(Ref ref) {
     remoteDataSource: ref.watch(taskRemoteDataSourceProvider),
     networkInfo: ref.watch(networkInfoProvider),
   );
+}
+
+@riverpod
+AddTask addTask(Ref ref) {
+  return AddTask(ref.watch(taskRepositoryProvider));
+}
+
+@riverpod
+DeleteTask deleteTask(Ref ref) {
+  return DeleteTask(ref.watch(taskRepositoryProvider));
+}
+
+@riverpod
+UpdateTask updateTask(Ref ref) {
+  return UpdateTask(ref.watch(taskRepositoryProvider));
 }

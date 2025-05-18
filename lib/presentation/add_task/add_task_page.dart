@@ -65,6 +65,24 @@ class _AddTaskPageState extends ConsumerState<AddTaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.go('/'),
+        ),
+        actions: [
+          if (widget.task != null)
+            IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () {
+                if (widget.task != null) {
+                  ref
+                      .read(taskViewModelProvider.notifier)
+                      .deleteTask(widget.task!.id);
+                  context.go('/');
+                }
+              },
+            ),
+        ],
         title: Text(widget.task != null ? 'Edit Task' : 'Add Task'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
