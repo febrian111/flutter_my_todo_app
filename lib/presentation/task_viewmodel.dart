@@ -36,12 +36,12 @@ class TaskViewModel extends _$TaskViewModel {
   }
 
   Future<void> updateTask(Task task) async {
-    await ref.read(updateTaskProvider.notifier).execute(task);
+    await ref.read(updateTaskProvider).execute(task);
     _loadTasks();
   }
 
   Future<void> deleteTask(String id) async {
-    await ref.read(deleteTaskProvider.notifier).execute(id);
+    await ref.read(deleteTaskProvider).execute(id);
     _loadTasks();
   }
 

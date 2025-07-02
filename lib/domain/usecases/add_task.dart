@@ -11,7 +11,7 @@ class AddTask {
 
   Future<void> execute(Task task) async {
     // Simulate a delay for demonstration purposes
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 1));
     await _taskRepository.addTask(task);
   }
 }
